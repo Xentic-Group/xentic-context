@@ -1,0 +1,37 @@
+version: 2
+
+project_name: xentic-context
+
+builds:
+  - env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - windows
+      - darwin
+    goarch:
+      - amd64
+      - arm64
+    main: ./main.go
+
+release:
+  github:
+    owner: Xentic
+    name: xentic-context
+
+brews:
+  - name: context-ai
+    repository:
+      owner: Xentic-Group
+      name: homebrew-tap
+      token: "{{ .Env.HOMEBREW_TAP_GITHUB_TOKEN }}"
+    
+    commit_author:
+      name: xentic-bot
+      email: hello@xentic.cloud
+      
+    commit_msg_template: "Brew formula update for {{ .ProjectName }} version {{ .Tag }}"
+    
+    homepage: "https://www.xentic.cloud"
+    description: "The ultimate bridge between your infrastructure code and Large Language Models."
+    license: "MIT"
