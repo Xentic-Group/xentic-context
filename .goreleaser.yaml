@@ -13,6 +13,7 @@ builds:
       - amd64
       - arm64
     main: ./main.go
+    binary: context-ai
 
 release:
   github:
@@ -35,3 +36,6 @@ brews:
     homepage: "https://www.xentic.cloud"
     description: "The ultimate bridge between your infrastructure code and Large Language Models."
     license: "MIT"
+
+    install: |
+          bin.install "context-ai"
