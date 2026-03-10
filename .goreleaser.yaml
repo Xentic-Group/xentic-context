@@ -16,7 +16,7 @@ builds:
 
 release:
   github:
-    owner: Xentic
+    owner: Xentic-Group
     name: xentic-context
 
 brews:
